@@ -9,11 +9,11 @@ describe('our firts test', () => {
 });
 
 describe('index.html', () => {
-  it('should say Hello', (done) => {
+  it('should say have h1 that say Users', (done) => {
     const index = fs.readFileSync('./src/index.html', "utf-8");
     JSDOM.env(index, (err, window) => {
       const h1 = window.document.getElementsByTagName('h1')[0];
-      expect(h1.innerHTML).to.equal('Hello World!');
+      expect(h1.innerHTML).to.equal("Users");
       done();
       window.close();
     });
